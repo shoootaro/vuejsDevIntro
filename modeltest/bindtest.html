@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Vue.js sample</title>
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    <div id="app">
+      <input v-model="myName" placeholder="お名前">
+      <p>私は、{{ myName }}です。</p>
+      <textarea v-model="myText"></textarea>
+      <p>文章は、「{{ myText }}」</p>
+      <p>文字数は、{{ myText.length }}文字です。</p>
+      <label><input type="checkbox" v-model="myCheck">チェックボックスは、{{ myCheck }}</label><br>
+      <label><input type="checkbox" value="red" v-model="myChecks">赤</label><br>
+      <label><input type="checkbox" value="green" v-model="myChecks">緑</label><br>
+      <label><input type="checkbox" value="blue" v-model="myChecks">青</label><br>
+      <p>選択したのは、{{ myChecks }}</p>
+      <label><input type="checkbox" v-model="myAgree">同意します</label>
+      <button v-bind:disabled="myAgree==false">送信</button><br>
+      <label><input type="radio" value="red" v-model="picked">赤</label><br>
+      <label><input type="radio" value="green" v-model="picked">緑</label><br>
+      <label><input type="radio" value="blue" v-model="picked">青</label><br>
+      <p>{{ picked }}を選択</p>
+      <label><input type="radio" value="face1.png" v-model="fileName">face1</label><br>
+      <label><input type="radio" value="face2.png" v-model="fileName">face2</label><br>
+      <p>{{ fileName }}を選択</p>
+      <img v-bind:src="fileName"><br>
+      <select v-model="myColor" multiple style="width: 150px">
+        <option>red</option>
+        <option>green</option>
+        <option>blue</option>
+        <option>orange</option>
+        <option>brown</option>
+      </select>
+      <p>選択したのは、{{ myColor }}です</p><br>
+      <input v-model.lazy="myText2">
+      <p>入力後に表示「{{ myText2 }}」</p><br>
+      <input v-model.number="myNumber" type="number">
+      <p>100を足して表示「{{ 100 + myNumber }}」</p><br>
+      <input v-model.trim="myText3">
+      <p>前後の空白を削除{{ myText3 }}</p>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.5.17/dist/vue.js"></script>
+    <script src="./script.js"></script>
+  </body>
+</html>
