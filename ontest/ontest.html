@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Vue.js sample</title>
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    <div id="app">
+      <p>{{ count }}</p>
+      <button v-on:click="countUp">1増やす</button>
+      <button value="いいね" v-bind:disabled="isClick" v-on:click="oneClick">いいね</button><br>
+      <p>{{ count2 }}</p>
+      <button v-on:click="countUp2(3)">3増やす</button>
+      <button v-on:click="countUp2(10)">10増やす</button>
+      <button v-on:click="countUp2(100)">100増やす</button><br>
+      <input v-on:keyup.enter.shift="showAlert" v-model="myText">
+      <p>{{ myText }}</p><br>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.5.17/dist/vue.js"></script>
+    <script src="./script.js"></script>
+  </body>
+</html>
