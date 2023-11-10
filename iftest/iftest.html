@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Vue.js sample</title>
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    <div id="app">
+      <label><input type="checkbox" v-model="myVisible">表示する</label>
+      <p v-if="myVisible">チェックボックスはON</p><br>
+      <label><input type="checkbox" v-model="myVisible2">表示する</label>
+      <p v-if="myVisible2">チェックボックスはON</p>
+      <p v-else="myVisible2">チェックボックスはOFF</p><br>
+      <label><button v-if="isShow" v-on:click="iine">いいね！</button></label>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.5.17/dist/vue.js"></script>
+    <script src="./script.js"></script>
+  </body>
+</html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Vue.js sample</title>
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    <div id="app">
+      <ul>
+        <li v-for="item in myArray">{{ item }}</li>
+      </ul>
+      <ul>
+        <li v-for="item in objArray">{{ item.name }} ¥{{ item.price }}</li>
+      </ul>
+      <ul>
+        <li v-for="n in 10">{{ n }}x5={{ n * 5 }}</li>
+      </ul>
+      <ul>
+        <li v-for="(item, index) in myArray">{{ index }}:{{ item }}</li>
+      </ul>
+      <h3>注目されてる言語ランキング</h3>
+      <table>
+        <thead>
+          <th v-for="item in header">{{ item }}</th>
+        </thead>
+        <tbody>
+          <tr v-for="line in ranking">
+            <td v-for="item in line">{{ item }}</td>
+          </tr>
+        </tbody>
+      </table>
+      <ul>
+        <li v-for="item in myArray2">{{ item }}</li>
+        <button v-on:click="addLast">末尾に追加</button><br>
+        <button v-on:click="addObj(3)">4つ目に追加</button><br>
+        <button v-on:click="changeObj(0)">1つ目を変更</button><br>
+        <button v-on:click="deleteObj(1)">2つ目を削除</button><br>
+      </ul>
+      <ul>
+        <li v-for="item in myArray3">{{ item }}</li>
+      </ul>
+      <button v-on:click="sortData(myArray3)">ソートする</button><br>
+      <ul>
+        <li v-for="item in myArray4" v-if="item % 2 == 0">{{ item }}</li>
+      </ul>
+      <ul>
+        <li v-for="item in myArray4">{{ item }}</li>
+        <button v-on:click="evenData()">偶数だけにする</button><br>
+      </ul>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.5.17/dist/vue.js"></script>
+    <script src="./script.js"></script>
+  </body>
+</html>
