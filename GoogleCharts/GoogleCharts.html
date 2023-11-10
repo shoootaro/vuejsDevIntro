@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Vue.js sample</title>
+    <link rel="stylesheet" href="style.css">
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+  </head>
+  <body>
+    <h2>GoogleChartsで円グラフを表示させる例</h2>
+    <h3>好きなランチ投票</h3>
+    <div id="chart_div" style="height: 500px;"></div>
+    <div id="app">
+      <li v-for="(item, c) in dataArray" v-if="c>0">{{item[0]}} : {{item[1]}}
+        <button v-on:click="addOne(c)">一票</button>
+      </li>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.5.17/dist/vue.js"></script>
+    <script src="./script.js"></script>
+  </body>
+</html>
