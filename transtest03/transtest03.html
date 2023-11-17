@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Vue.js sample</title>
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    <div id="app">
+      <transition-group>
+        <li v-for="item in dataArray" v-bind:key="item">{{item}}</li>
+      </transition-group>
+      <button v-on:click="sortData">ソートする</button>
+      <button v-on:click="shuffleData">シャッフルする</button>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.5.17/dist/vue.js"></script>
+    <script src="./script.js"></script>
+  </body>
+</html>
